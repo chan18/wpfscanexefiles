@@ -17,7 +17,7 @@
                 <Button Click="fetchFiles"> Fetch Files </Button>
             </StackPanel>
 
-            <Label Content="{Binding filePath}"></Label>
+            <Label Content="{Binding GetFiles, Mode=TwoWay}"></Label>
 
             <!--<ListView ItemsSource="{Binding AllProcess}">
                 <ItemsControl.ItemTemplate>
@@ -34,15 +34,16 @@
                 </ItemsControl.ItemTemplate>
             </ListView>-->
 
-            <ListView ItemsSource="{Binding files,Mode=TwoWay}">
+            
+            <ListView
+                ScrollViewer.VerticalScrollBarVisibility="Visible"
+                ItemsSource="{Binding GetFiles,Mode=TwoWay}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Grid Margin="0,0,0,5">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="100" />
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="1"  Text="{Binding files}" />                            
+                        <Grid>
+                            <Button Content="{Binding }" Click="Button_Click">
+                                
+                            </Button>                                                     
                         </Grid>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>

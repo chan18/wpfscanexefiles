@@ -5,6 +5,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System;
+using System.Collections.ObjectModel;
+using System.Windows.Controls;
 
 namespace WpfApp1
 {
@@ -16,12 +18,16 @@ namespace WpfApp1
         public Process[] Processes;
         public string execPath;
 
-        public List<string> files = new List<string>();
+        public ObservableCollection<string> files = new ObservableCollection<string>();
 
-        public List<string> GetFiles
+        public ObservableCollection<string> GetFiles
         {
             get { return files; }
-            set { files = value; }
+            set
+            {
+                files = value;
+                OnPropertyChanged("files");
+            }
         }
 
         public string filePath {
@@ -52,6 +58,8 @@ namespace WpfApp1
                 OnPropertyChanged("AllProcess");
             }
         }
+
+        
 
         // Create the OnPropertyChanged method to raise the event
         protected void OnPropertyChanged(string value)
@@ -110,5 +118,12 @@ namespace WpfApp1
 
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string openFile = (sender as Button).Content.ToString();
+            //Process.Start("notepad.exe");
+            Process.Start(openFile);
+            Console.WriteLine(e.Source.ToString());
+        }
     }
 }
