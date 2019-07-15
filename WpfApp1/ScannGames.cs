@@ -39,6 +39,7 @@ namespace WpfApp1
                 catch (Exception e)
                 {
                     Console.WriteLine($"error on finding exe file, {e.Message}");
+                    throw e;
                 }
             }
 
@@ -51,6 +52,7 @@ namespace WpfApp1
                 catch (Exception e)
                 {
                     Console.WriteLine($"error on finding exe file, {e.Message}");
+                    throw e;
                 }
             }
 
