@@ -1,7 +1,7 @@
 ﻿WpfApp1
 
 
-winexe
+exe
 C#
 .cs
 C:\Users\Naga Sai\source\repos\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.0\
@@ -12,8 +12,8 @@ TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_0
 C:\Users\Naga Sai\source\repos\WpfApp1\WpfApp1\App.xaml
 11151548125
 
-4761620404
-194-130394778
+5145828659
+198-1829156603
 MainWindow.xaml;
 
 False
